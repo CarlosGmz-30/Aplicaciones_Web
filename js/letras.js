@@ -7,20 +7,23 @@ luego la segunda letra de la palabra 1 con todas las letras de la palabra 2, etc
 
 //Zona de declaración de variables
 var palabra1 = "perro";
-var palabra2 = "carro";
+var palabra2 = "Perro";
 var contador = 0;
 
 
 //Zona de arreglos
 var letras1 = [];
+var letrasMayusculas = [];
+
 
 
 //Zona de operaciones
-function letrasPalabra1(palabra1){
-    for(var i = 0; i < palabra1.length; i++){
-        letras1.push(palabra1.charAt(i));
+function letrasPalabra1(palabra) {
+    for (var i = 0; i < palabra.length; i++) {
+        letras1.push(palabra.charAt(i).toLowerCase());
     }
 }
+
 
 function compararLetras(letras1, palabra1,palabra2){
     for(var i = 0; i < palabra1.length && i < palabra2.length; i++){
