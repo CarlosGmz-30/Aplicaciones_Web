@@ -4,8 +4,8 @@ hasta que número quiere que se multiplique.
 */
 
 // Zona de variables
-var numero = 0;
-var limite = 0;
+var numero = 10;
+var limite = 15;
 
 
 // Zona de operaciones
@@ -16,4 +16,4 @@ function multiplicar(numero, limite) {
 }
 
 // Zona de impresión
-multiplicar(5, 15);
+multiplicar(10, 15);
