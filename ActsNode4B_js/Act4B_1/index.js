@@ -79,5 +79,17 @@ app.delete('/api/movies/:id', (req, res) => {
     movies.splice(index, 1);
     res.send(movie);
 });
+
+app.post('/api/movies', (req, res) => {
+    const movie = {
+        id: movies.length +1,
+        name: req.body.name,
+        duration: parseInt(req.body.duration),
+        distribution: req.body.distribution
+    }
+    movies.push(movie);
+    res.json(movie);
+});
+
 const port = process.env.port || 80;
 app.listen(port, () => console.log(`Listen en el puerto ${port}`));
