@@ -60,8 +60,7 @@ app.post('/api/agenda', (req, res) => {
         const fecha = agenda.birthdate.split('/');
         const dia = fecha[0];
         const mes = fecha[1];
-        const año = fecha[2];
-        año = año.substring(2, 4);
+        let año = fecha[2].slice(-2);
         return { dia, mes, año };
     }
 
