@@ -77,54 +77,34 @@ app.post('/api/agenda', (req, res) => {
     }
 
     function consonante(agenda) {
-        const consonante = "";
         const name = agenda.name.toLowerCase();
         const firstLastname = agenda.firstLastname.toLowerCase();
         const secondLastname = agenda.secondLastname.toLowerCase();
         const consonantes = "bcdfghjklmnñpqrstvxzwy";
-        var nombre = [];
-        var apellido1 = [];
-        var apellido2 = [];
+        let nombre = "";
+        let apellido1 = "";
+        let apellido2 = "";
+
         for (let i = 0; i < name.length; i++) {
-            if (name[i] == consonantes) {
-                nombre.push(name[i]);
+            if (consonantes.includes(name[i])) {
+                nombre += name[i];
             }
         }
+
         for (let i = 0; i < firstLastname.length; i++) {
-            if (firstLastname[i] == consonantes) {
-                apellido1.push(firstLastname[i]);
+            if (consonantes.includes(firstLastname[i])) {
+                apellido1 += firstLastname[i];
             }
         }
+
         for (let i = 0; i < secondLastname.length; i++) {
-            if (secondLastname[i] == consonantes) {
-                apellido2.push(secondLastname[i]);
+            if (consonantes.includes(secondLastname[i])) {
+                apellido2 += secondLastname[i];
             }
         }
 
-        consonante += apellido1[1] += apellido2[1] += nombre[1];
-        return consonante;
+        return apellido1.charAt(1) + apellido2.charAt(1) + nombre.charAt(1);
     }
-
-    function crearCURP() {
-        const curp = "";
-        const fecha = separarFecha(agenda);
-        const numAleatorio = numeroRandom();
-        const estado = entidad(agenda);
-        const letrasConsonantes = consonante(agenda);
-        curp += agenda.firstLastname[0];
-        curp += agenda.firstLastname[1];
-        curp += agenda.secondLastname[0];
-        curp += agenda.name[0];
-        curp += fecha.año;
-        curp += fecha.mes;
-        curp += fecha.dia;
-        curp += agenda.sex;
-        curp += estado;
-        curp += letrasConsonantes;
-        curp += numAleatorio;
-    }
-
-    
     agenda.push(agenda);
     res.json(agenda);
 });
