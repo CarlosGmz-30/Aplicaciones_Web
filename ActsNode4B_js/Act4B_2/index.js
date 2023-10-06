@@ -26,6 +26,7 @@ const agenda = [
         birthdate: "30/01/2004",
         sex: "H",
         state: "Morelos",
+
     }
 ];
 
@@ -132,4 +133,3 @@ app.post('/api/agenda', (req, res) => {
 
 const port = process.env.port || 80;
 app.listen(port, () => console.log(`Listen en el puerto ${port}`));
-
