@@ -301,7 +301,7 @@ app.put('/api/agenda/:id', (req, res) => {
     if (!user) {
         return res.status(404).send('El contacto con el ID dado no fue encontrado');
     }
-
+    
     //Actualizar nombre del contacto
     user.name = contact.name;
 
