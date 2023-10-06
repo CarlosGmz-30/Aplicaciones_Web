@@ -26,7 +26,66 @@ const agenda = [
         birthdate: "30/01/2004",
         sex: "H",
         state: "Morelos",
-
+        emergencyContact: [
+            {
+                name: 'Daniela',
+                firstLastname: 'Martinez',
+                secondLastname: 'Gómez',
+                phone: "7773070731",
+            },
+            {
+                name: 'Alexa',
+                firstLastname: 'Pereyra',
+                secondLastname: 'Lee',
+                phone: "7772238283",
+            }
+        ]
+    },
+    {
+        id: 2,
+        name: 'Daniela',
+        firstLastname: 'Martinez',
+        secondLastname: 'Gómez',
+        birthdate: "31/05/2005",
+        sex: "M",
+        state: "Morelos",
+        emergencyContact: [
+            {
+                name: 'Carlos',
+                firstLastname: 'Martinez',
+                secondLastname: 'Gómez',
+                phone: "7772238283",
+            },
+            {
+                name: 'Alexa',
+                firstLastname: 'Pereyra',
+                secondLastname: 'Lee',
+                phone: "7773070731",
+            }
+        ]
+    },
+    {
+        id: 3,
+        name: 'Alexa Mi Moy',
+        firstLastname: 'Pereyra',
+        secondLastname: 'Lee',
+        birthdate: "29/05/2004",
+        sex: "M",
+        state: "Morelos",
+        emergencyContact: [
+            {
+                name: 'Carlos',
+                firstLastname: 'Martinez',
+                secondLastname: 'Gómez',
+                phone: "7772238283",
+            },
+            {
+                name: 'Daniela',
+                firstLastname: 'Martinez',
+                secondLastname: 'Gómez',
+                phone: "7773070731",
+            }
+        ]
     }
 ];
 
@@ -56,10 +115,11 @@ app.post('/api/agenda', (req, res) => {
     //Inicial y primer vocal del primer apellido
     const vocales = "aeiou";
     let vocal = "";
-    let ape1 = firstLastname.toLowerCase();
+    let ape1 = firstLastname;
     for (let i = 0; i < ape1.length; i++) {
-        if (vocales.includes(ape1[i])) {
+        if (vocales.includes(ape1[i].toLowerCase())) {
             vocal = ape1[i];
+            break;
         }
     }
     const part1 = ape1.charAt(0) + vocal.charAt(0) + secondLastname.charAt(0) + name.charAt(0);
@@ -116,7 +176,7 @@ app.post('/api/agenda', (req, res) => {
     let curpUnion = part1 + part2 + part3 + part4 + part5 + part6;
     let curpFinal = curpUnion.toUpperCase();
 
-    const agenda = {
+    const nuevoContacto = {
         id: agenda.length + 1,
         name: req.body.name,
         firstLastname: req.body.firstLastname,
@@ -124,12 +184,13 @@ app.post('/api/agenda', (req, res) => {
         birthdate: req.body.birthdate,
         sex: req.body.sex,
         state: req.body.state,
+        emergencyContact: req.body.emergencyContact,
         CURP: curpFinal,
     }
 
-    agenda.push(agenda);
-    res.json(agenda);
+    agenda.push(nuevoContacto);
+    res.json(nuevoContacto);
 });
 
-const port = process.env.port || 80;
+const port = process.env.PORT || 80;
 app.listen(port, () => console.log(`Listen en el puerto ${port}`));
