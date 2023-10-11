@@ -1,6 +1,6 @@
-const { pool } = require('../bd.js');
+const { bdPool } = require('../bd.js');
 const indexDb = async (req, res) => {
-    const [result] = await pool.query('SELECT 1 + 1 as result');
+    const [result] = await bdPool.query('SELECT 1 + 1 as result');
     res.json(result[0]);
 }
 

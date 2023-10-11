@@ -1,6 +1,6 @@
-import { createPool } from "mysql2/promise";
+const { createPool } = require ("mysql2/promise");
 
-const pool = createPool({
+const bdPool = createPool({
     host: 'localhost',
     user: 'root',
     password: 'root',
@@ -8,5 +8,5 @@ const pool = createPool({
 });
 
 module.exports = {
-    pool
+    bdPool
 };
