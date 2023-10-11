@@ -5,9 +5,7 @@ const getEmployees = (req, res) => {
 };
 
 const addEmployee = (req, res) => {
-    res.json({
-        msj: "Peticion post"
-    });
+    res.send(req.body);
 };
 
 const updateEmployee = (req, res) => {
