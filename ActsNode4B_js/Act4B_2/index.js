@@ -24,6 +24,7 @@ const agenda = [
         firstLastname: 'Martinez',
         secondLastname: 'Gómez',
         birthdate: "30/01/2004",
+        phone: "7772238283",
         sex: "H",
         state: "Morelos",
         emergencyContact: [
@@ -47,6 +48,7 @@ const agenda = [
         firstLastname: 'Martinez',
         secondLastname: 'Gómez',
         birthdate: "31/05/2005",
+        phone: "7772238283",
         sex: "M",
         state: "Morelos",
         emergencyContact: [
@@ -70,6 +72,7 @@ const agenda = [
         firstLastname: 'Pereyra',
         secondLastname: 'Lee',
         birthdate: "29/05/2004",
+        phone: "7772238283",
         sex: "M",
         state: "Morelos",
         emergencyContact: [
@@ -296,12 +299,14 @@ app.patch('/api/agenda/:id', (req, res) => {
 app.put('/api/agenda/:id', (req, res) => {
     const user = agenda.find(m => m.id === parseInt(req.params.id))
     if (!user) return res.status(404).send('Agenda no encontrada');
+
     user.id = user.id
     user.name = req.body.name
     user.birthdate = req.body.birthdate
     user.state = req.body.state
     user.sex = req.body.sex
     user.emergencyContact = req.body.emergencyContact
+    user.phone = req.body.phone
     
     let name = req.body.name;
     let firstLastname = req.body.firstLastname;
@@ -309,6 +314,11 @@ app.put('/api/agenda/:id', (req, res) => {
     let birthdate = req.body.birthdate;
     let sex = req.body.sex;
     let state = req.body.state;
+    let phone = req.body.phone;
+
+    if (!req.body.name || !req.body.firstLastname || !req.body.secondLastname || !req.body.birthdate || !req.body.sex || !req.body.state || !req.body.phone) {
+        return res.status(400).send('Todos los campos son requeridos');
+    }
 
     //Inicial y primer vocal del primer apellido
     const vocales = "aeiou";
