@@ -1,6 +1,7 @@
 const { pool } = require("../db.js");
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken');
+const secretKey = '4Tx)D@pH3O$9'
 
 const addUser = async (req, res) => {
     const { username, pass, rol } = req.body;
@@ -19,7 +20,7 @@ const loginUser = async (req, res) => {
     const { username, pass } = req.body;
     const [rows] = await pool.query('select * from usuario where username = ?', [username]);
     if (rows.length === 0) {
-        //El usuario no existe
+        // El usuario no existe
         res.json({
             "msj": "El usuario no se encuentra"
         });
@@ -31,13 +32,39 @@ const loginUser = async (req, res) => {
                 const token = jwt.sign({
                     username: username,
                     id: rows[0].id
-                }, "4Tx)D@pH3O$9");
+                }, secretKey, { expiresIn: 60 });
+                //                  Tiempo de expiración
                 res.json({ token });
             } else {
                 res.json({ "msg": "Usuario y/o contrasenias no encontradas" });
             }
         });
     }
+}
+
+// Función para verificar Tokenn
+function verificarToken(req, res, next) {
+    //            Extraemos Token del encabezado
+    const token = req.headers.authorization;
+
+    // Verificamos si se ingreso el Token
+    if (!token) {
+        return res.status(401).json({
+            "msg": "Token no proporcionado"
+        });
+    }
+
+    
+    jwt.verify(token, secretKey, (err, decode) => {
+        if (err) {
+            return res.status(403).json({
+                "msg": "Token inválido"
+            });
+        }
+
+        req.usuario = decoded;
+        next();
+    });
 }
 
 
