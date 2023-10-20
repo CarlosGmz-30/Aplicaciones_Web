@@ -11,6 +11,14 @@ create table employee(
     posType varchar(50) not null
 );
 
+create table usuario (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50),
+    pass VARCHAR(256),
+    rol VARCHAR(50)
+);
+
+
 insert into employee(empName, ap1, ap2, salary, posType)
 values ("Carlos", "Martinez", "Gomez", 20000, "Asignatura");
 
