@@ -11,11 +11,19 @@ const addUser = async (req, res) => {
     //              Variable de la contraseña/Extensión de encriptado
     const hashedPass = await bcrypt.hash(pass, 10);
 
-    // De esta manera hacemos nuestra petición en la base de datos
-    const rows = await pool.query(
-        'insert into usuario (username, pass, rol) VALUES (?, ?, ?)',
-        [username, hashedPass, rol]);
-    res.send({ rows });
+    // Variable para validar si el usuario existe
+    const [validation] = await pool.query('select * from usuario where username = ?', [username]);
+    if (validation.length > 0) {
+        res.json({
+            "msj": "El usuario ya existe"
+        });
+    } else {
+        // De esta manera hacemos nuestra petición en la base de datos
+        const rows = await pool.query(
+            'insert into usuario (username, pass, rol) VALUES (?, ?, ?)',
+            [username, hashedPass, rol]);
+        res.send({ rows });
+    }
 };
 
 
