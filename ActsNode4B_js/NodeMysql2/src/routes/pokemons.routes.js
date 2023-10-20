@@ -1,10 +1,13 @@
 const express = require('express');
 const { getemployees, createemployees, updateemployees, deleteemployees,
 getOne } = require("../controllers/pokemons.controller.js");
+// Declaramos nuestra constante del validateToken
+const validateToken = require('./validate-token.js');
 
 const router = express.Router();
 
-router.get('/employees', getemployees);
+//                       Llamar el metodo de validar
+router.get('/employees', validateToken, getemployees);
 
 router.get('/employees/:id', getOne);
 

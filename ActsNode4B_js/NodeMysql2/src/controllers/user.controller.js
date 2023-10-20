@@ -1,7 +1,10 @@
 const { pool } = require("../db.js");
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken');
-const secretKey = '4Tx)D@pH3O$9'
+
+// Para utilizar las variables de entorno se necesita esto:
+const dotenv = require('dotenv');
+dotenv.config();
 
 const addUser = async (req, res) => {
     const { username, pass, rol } = req.body;
@@ -32,8 +35,8 @@ const loginUser = async (req, res) => {
                 const token = jwt.sign({
                     username: username,
                     id: rows[0].id
-                }, secretKey, { expiresIn: 60 });
-                //                  Tiempo de expiración
+                }, process.env.SECRET_KEY, { expiresIn: '1m' });
+                // Variable de entorno       Tiempo de expiración
                 res.json({ token });
             } else {
                 res.json({ "msg": "Usuario y/o contrasenias no encontradas" });
@@ -42,6 +45,7 @@ const loginUser = async (req, res) => {
     }
 }
 
+/*
 // Función para verificar Tokenn
 function verificarToken(req, res, next) {
     //            Extraemos Token del encabezado
@@ -54,7 +58,6 @@ function verificarToken(req, res, next) {
         });
     }
 
-    
     jwt.verify(token, secretKey, (err, decode) => {
         if (err) {
             return res.status(403).json({
@@ -66,7 +69,7 @@ function verificarToken(req, res, next) {
         next();
     });
 }
-
+*/
 
 // Exportamos el módulo
 module.exports = {

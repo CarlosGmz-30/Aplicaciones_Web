@@ -41,15 +41,15 @@ const updateemployees = async (req, res) => {
 };
 
 const deleteemployees = async (req, res) => {
-    id = req.params.id;
-    const [rows] = await pool.query('DELETE FROM employee WHERE id = ?', [req.params.id]);
+    const id = req.params.id;
+    const [rows] = await pool.query('DELETE FROM employee WHERE id = ?', [id]);
     if (rows.affectedRows > 0) {
         return res.json("Empleado eliminado exitosamente");
     } else {
         return res.status(404).json({ msj: "Empleado no encontrado" });
     }
-
 };
+
 
 
 
