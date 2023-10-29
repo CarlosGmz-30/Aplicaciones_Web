@@ -7,11 +7,11 @@ router.get('/university', getAlumnos);
 
 router.get('/university/:matricula', getOne);
 
-router.get('/university', createAlumno);
+router.post('/university', createAlumno);
 
-router.get('/university/:idM', updateAlumno);
+router.put('/university/:idM', updateAlumno);
 
-router.get('/university/:matricula', deleteAlumno);
+router.delete('/university/:matricula', deleteAlumno);
 
 
 module.exports = router;
