@@ -6,7 +6,7 @@ const getAlumnos = async (req, res) => {
 };
 
 const getOne = async (req, res) => {
-    const [filas] = await pool.query('SELECT * FROM alumnos WHERE id = ?', [req.params.id]);
+    const [filas] = await pool.query('SELECT * FROM alumnos WHERE matricula = ?', [req.params.matricula]);
     if (filas.length <= 0)
         return res.status(404).json({
             msj: "Alumno no encontrado"
