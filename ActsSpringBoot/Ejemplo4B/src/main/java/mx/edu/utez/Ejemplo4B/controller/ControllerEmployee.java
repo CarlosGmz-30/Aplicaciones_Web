@@ -4,7 +4,6 @@ import mx.edu.utez.Ejemplo4B.model.dto.DtoEmployee;
 import mx.edu.utez.Ejemplo4B.model.entity.BeanEmployee;
 import mx.edu.utez.Ejemplo4B.service.IEmployee;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.web.bind.annotation.*;
 
 // Con este traemos las respuestas
