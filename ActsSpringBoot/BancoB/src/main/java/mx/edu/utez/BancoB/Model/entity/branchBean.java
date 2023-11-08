@@ -3,6 +3,9 @@ package mx.edu.utez.BancoB.Model.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.HashSet;
+import java.util.Set;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -29,6 +32,7 @@ public class branchBean {
     @OneToOne(mappedBy = "branchBean", cascade = CascadeType.ALL)
     private employeeBean employeeBean;
 
-    @OneToOne(mappedBy = "branchBean", cascade = CascadeType.ALL)
-    private clientBean clientBean;
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "branchBean", cascade = CascadeType.ALL)
+    private Set<clientBean> clientBeanSet = new HashSet<>();
 }

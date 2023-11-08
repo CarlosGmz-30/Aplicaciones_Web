@@ -3,6 +3,9 @@ package mx.edu.utez.BancoB.Model.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.HashSet;
+import java.util.Set;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -26,4 +29,10 @@ public class cardBean {
     @Column(name = "card_number")
     private String card_number;
 
+
+    @ManyToMany
+    @JoinTable(name = "client_has_card",
+            joinColumns = @JoinColumn(name = "id_card"),
+            inverseJoinColumns = @JoinColumn(name = "id_client"))
+    Set<clientBean> clientBeanSet = new HashSet<>();
 }

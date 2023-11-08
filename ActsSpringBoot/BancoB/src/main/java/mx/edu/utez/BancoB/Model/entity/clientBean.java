@@ -3,6 +3,8 @@ package mx.edu.utez.BancoB.Model.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.Set;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -27,7 +29,11 @@ public class clientBean {
     @JoinColumn(name = "id_person")
     private personBean personBean;
 
-    @OneToOne(cascade = CascadeType.ALL, optional = false)
+
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_branch")
     private branchBean branchBean;
+
+    @ManyToMany(mappedBy = "clientBeanSet")
+    Set<cardBean> cardBeanSet;
 }
