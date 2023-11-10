@@ -6,6 +6,8 @@ import mx.edu.utez.BancoB.Service.IPerson;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 // Con este traemos las respuestas
 @RestController
 @RequestMapping("api/v1/person")
@@ -40,5 +42,10 @@ public class ControllerPerson {
     @GetMapping("/{id_person}")
     public personBean showById(@PathVariable Integer id_person) {
         return personService.findById(id_person);
+    }
+
+    @GetMapping("/")
+    public List<personBean> findAll() {
+        return personService.findAll();
     }
 }

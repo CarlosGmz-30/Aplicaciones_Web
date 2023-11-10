@@ -6,6 +6,8 @@ import mx.edu.utez.BancoB.Service.ICard;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 
 @RestController
 @RequestMapping("api/v1/card")
@@ -39,5 +41,10 @@ public class ControllerCard {
     @GetMapping("{id_card}")
     public cardBean showById(@PathVariable Integer id_card) {
         return cardService.findById(id_card);
+    }
+
+    @GetMapping("/")
+    public List<cardBean> findAll() {
+        return cardService.findAll();
     }
 }

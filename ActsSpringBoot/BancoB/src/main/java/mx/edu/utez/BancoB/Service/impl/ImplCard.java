@@ -3,10 +3,13 @@ package mx.edu.utez.BancoB.Service.impl;
 import mx.edu.utez.BancoB.Model.dao.DaoCard;
 import mx.edu.utez.BancoB.Model.dto.DtoCard;
 import mx.edu.utez.BancoB.Model.entity.cardBean;
+import mx.edu.utez.BancoB.Model.entity.personBean;
 import mx.edu.utez.BancoB.Service.ICard;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
 
 @Service
 public class ImplCard implements ICard {
@@ -30,9 +33,14 @@ public class ImplCard implements ICard {
         //                              Por si no existe returna un nulo
     }
 
-    @Transactional
     @Override
     public void delete(cardBean card) {
         daoCard.delete(card);
+    }
+
+    @Transactional(readOnly = true)
+    @Override
+    public List<cardBean> findAll() {
+        return (List<cardBean>) daoCard.findAll();
     }
 }

@@ -3,9 +3,12 @@ package mx.edu.utez.BancoB.Controller;
 import mx.edu.utez.BancoB.Model.dto.DtoBranch;
 import mx.edu.utez.BancoB.Model.dto.DtoCard;
 import mx.edu.utez.BancoB.Model.entity.branchBean;
+import mx.edu.utez.BancoB.Model.entity.personBean;
 import mx.edu.utez.BancoB.Service.IBranch;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("api/v1/branch")
@@ -39,5 +42,10 @@ public class ControllerBranch {
     @GetMapping("/{id_branch}")
     public branchBean showById(@PathVariable Integer id_branch) {
         return branchService.findById(id_branch);
+    }
+
+    @GetMapping("/")
+    public List<branchBean> findAll() {
+        return branchService.findAll();
     }
 }

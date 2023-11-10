@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Service
 public class ImplPerson implements IPerson {
     @Autowired
@@ -33,6 +35,12 @@ public class ImplPerson implements IPerson {
     @Override
     public void delete(personBean person) {
         daoPerson.delete(person);
+    }
+
+    @Transactional(readOnly = true)
+    @Override
+    public List<personBean> findAll() {
+        return (List<personBean>) daoPerson.findAll();
     }
 
 }
