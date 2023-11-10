@@ -18,17 +18,17 @@ public class ControllerPerson {
     @PostMapping("/")
     public DtoPerson create(@RequestBody DtoPerson dtoPerson) {
         personBean personSave = personService.save(dtoPerson);
-        return DtoPerson.builder().id_person(dtoPerson.getId_person())
-                .name(dtoPerson.getName()).api1(dtoPerson.getApi1()).api2(dtoPerson.getApi2())
-                .birthdate(dtoPerson.getBirthdate()).address(dtoPerson.getAddress()).build();
+        return DtoPerson.builder().id_person(personSave.getId_person())
+                .name(personSave.getName()).api1(personSave.getApi1()).api2(personSave.getApi2())
+                .birthdate(personSave.getBirthdate()).address(personSave.getAddress()).build();
     }
 
     @PutMapping("/")
     public DtoPerson update(@RequestBody DtoPerson dtoPerson) {
         personBean personUpdate = personService.save(dtoPerson);
-        return DtoPerson.builder().id_person(dtoPerson.getId_person())
-                .name(dtoPerson.getName()).api1(dtoPerson.getApi1()).api2(dtoPerson.getApi2())
-                .birthdate(dtoPerson.getBirthdate()).address(dtoPerson.getAddress()).build();
+        return DtoPerson.builder().id_person(personUpdate.getId_person())
+                .name(personUpdate.getName()).api1(personUpdate.getApi1()).api2(personUpdate.getApi2())
+                .birthdate(personUpdate.getBirthdate()).address(personUpdate.getAddress()).build();
     }
 
     @DeleteMapping("/{id_person}")

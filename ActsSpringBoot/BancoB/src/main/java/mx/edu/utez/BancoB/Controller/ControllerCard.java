@@ -17,17 +17,17 @@ public class ControllerCard {
     @PostMapping("/")
     public DtoCard create(@RequestBody DtoCard dtoCard) {
         cardBean cardSave = cardService.save(dtoCard);
-        return DtoCard.builder().id_card(dtoCard.getId_card())
-                .card_number(dtoCard.getCard_number()).name_card(dtoCard.getName_card())
-                .credit_limit(dtoCard.getCredit_limit()).build();
+        return DtoCard.builder().id_card(cardSave.getId_card())
+                .card_number(cardSave.getCard_number()).name_card(cardSave.getName_card())
+                .credit_limit(cardSave.getCredit_limit()).build();
     }
 
     @PutMapping("/")
     public DtoCard update(@RequestBody DtoCard dtoCard) {
         cardBean cardUpdate = cardService.save(dtoCard);
-        return DtoCard.builder().id_card(dtoCard.getId_card())
-                .card_number(dtoCard.getCard_number()).name_card(dtoCard.getName_card())
-                .credit_limit(dtoCard.getCredit_limit()).build();
+        return DtoCard.builder().id_card(cardUpdate.getId_card())
+                .card_number(cardUpdate.getCard_number()).name_card(cardUpdate.getName_card())
+                .credit_limit(cardUpdate.getCredit_limit()).build();
     }
 
     @DeleteMapping("/{id_card}")
