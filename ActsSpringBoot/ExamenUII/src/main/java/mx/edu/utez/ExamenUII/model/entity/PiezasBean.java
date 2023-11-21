@@ -9,7 +9,7 @@ import lombok.*;
 @ToString
 @Builder
 @Entity
-@Table(name = "pizas")
+@Table(name = "piezas")
 public class PiezasBean {
     @Id
     @Column(name = "id_referencia")
