@@ -1,6 +1,21 @@
 package mx.edu.utez.ExamenUII.model.dto;
 
+import lombok.*;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@ToString
+@Builder
 public class DtoClientes {
+    private Integer id_cliente;
+    private String apellidos;
+    private String nombre;
+    private String direccion;
+    private Integer cp;
+    private Integer poblacion;
+    private Integer telefono;
+    private Integer telefono2;
 }
 
 
