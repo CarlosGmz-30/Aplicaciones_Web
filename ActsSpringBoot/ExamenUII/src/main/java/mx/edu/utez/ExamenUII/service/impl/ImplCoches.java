@@ -1,4 +1,4 @@
 package mx.edu.utez.ExamenUII.service.impl;
 
-public class implCoches {
+public class ImplCoches {
 }
