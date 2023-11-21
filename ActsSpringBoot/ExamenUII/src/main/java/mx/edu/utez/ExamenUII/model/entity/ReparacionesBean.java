@@ -37,6 +37,6 @@ public class ReparacionesBean {
     @JoinColumn(name = "id_coches")
     private CochesBean CochesBean;
 
-    @ManyToMany(mappedBy = "ReparacionesBeanSet")
+    @ManyToMany(mappedBy = "reparacionesBeanSet")
     Set<PiezasBean> piezasBeanSet;
 }
