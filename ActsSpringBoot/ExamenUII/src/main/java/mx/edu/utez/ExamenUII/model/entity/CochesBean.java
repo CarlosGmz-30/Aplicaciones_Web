@@ -1,7 +1,11 @@
 package mx.edu.utez.ExamenUII.model.entity;
 
+import com.sun.jdi.PrimitiveValue;
 import jakarta.persistence.*;
 import lombok.*;
+
+import java.util.HashSet;
+import java.util.Set;
 
 
 @Data
@@ -28,5 +32,11 @@ public class CochesBean {
 
     @Column(name = "km")
     private Integer km;
+
+    @OneToOne(mappedBy = "CochesBean", cascade = CascadeType.ALL)
+    private ClientesBean ClientesBean;
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "CochesBean", cascade = CascadeType.ALL)
+    private Set<ReparacionesBean> reparacionesBeanSet = new HashSet<>();
 
 }

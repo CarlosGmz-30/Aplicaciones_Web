@@ -37,6 +37,9 @@ public class ClientesBean {
     @Column(name = "telefono2")
     private Integer telefono2;
 
+    @OneToOne(cascade = CascadeType.ALL, optional = false)
+    @JoinColumn(name = "id_coches")
+    private CochesBean CochesBean;
 }
 
 

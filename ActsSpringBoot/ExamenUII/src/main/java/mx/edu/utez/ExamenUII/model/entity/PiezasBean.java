@@ -3,6 +3,9 @@ package mx.edu.utez.ExamenUII.model.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.HashSet;
+import java.util.Set;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -24,4 +27,10 @@ public class PiezasBean {
 
     @Column(name = "stock")
     private Integer stock;
+
+    @ManyToMany
+    @JoinTable(name = "DetallesReparacion",
+            joinColumns = @JoinColumn(name = "id_referencia"),
+            inverseJoinColumns = @JoinColumn(name = "id_reparaciones"))
+    Set<ReparacionesBean> reparacionesBeanSet = new HashSet<>();
 }
