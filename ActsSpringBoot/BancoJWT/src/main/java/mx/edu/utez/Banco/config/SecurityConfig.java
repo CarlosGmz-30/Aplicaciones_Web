@@ -7,12 +7,14 @@ import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 @Configuration
 @EnableWebSecurity
-public class SecurityConfig {
+public class SecurityConfig implements AuthenticationProvider{
 
     private final JWTAuthenticationFilter jwtAuthenticationFilter;
     private final AuthenticationProvider authProvider;
@@ -27,7 +29,7 @@ public class SecurityConfig {
         return httpSecurity.csrf(csrf ->
                         csrf.disable())     //Deshabilitar el metodo de seguridad que Spring trae de forma predeterminada
                 .authorizeHttpRequests(authRequest ->           //Autorizaciones
-                        authRequest.requestMatchers("auth/**")
+                        authRequest.requestMatchers("/auth/**")
                                 .permitAll()
                                 .anyRequest()
                                 .authenticated())           //Todos los que no tengan esta request necesitan autenticarse
@@ -36,5 +38,15 @@ public class SecurityConfig {
                 .authenticationProvider(authProvider)
                 .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class)
                 .build();
+    }
+
+    @Override
+    public Authentication authenticate(Authentication authentication) throws AuthenticationException {
+        return null;
+    }
+
+    @Override
+    public boolean supports(Class<?> authentication) {
+        return false;
     }
 }
