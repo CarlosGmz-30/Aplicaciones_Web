@@ -37,6 +37,7 @@ public class ImplClase implements IClase {
     @Transactional(readOnly = true)
     @Override
     public List<claseBean> findAll() {
+
         return (List<claseBean>) claseDao.findAll();
     }
 }
