@@ -2,8 +2,6 @@ package mx.edu.utez.ExamenRecupera.service.impl;
 
 import mx.edu.utez.ExamenRecupera.model.dao.DaoComentarios;
 import mx.edu.utez.ExamenRecupera.model.dto.DtoComentarios;
-
-import mx.edu.utez.ExamenRecupera.model.entity.claseBean;
 import mx.edu.utez.ExamenRecupera.model.entity.comentariosBean;
 import mx.edu.utez.ExamenRecupera.service.IComentarios;
 import org.springframework.beans.factory.annotation.Autowired;
