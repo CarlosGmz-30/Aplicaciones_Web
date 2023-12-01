@@ -1,4 +1,7 @@
 package mx.edu.utez.ExamenRecupera.model.dao;
 
-public interface DaoComentarios {
+import mx.edu.utez.ExamenRecupera.model.entity.comentariosBean;
+import org.springframework.data.repository.CrudRepository;
+
+public interface DaoComentarios extends CrudRepository<comentariosBean, Integer> {
 }
