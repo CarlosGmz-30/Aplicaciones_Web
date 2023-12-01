@@ -41,35 +41,3 @@ public class ClientesBean {
     @JoinColumn(name = "id_coches")
     private CochesBean CochesBean;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "branchBean", cascade = CascadeType.ALL)
-    private Set<clientBean> clientBeanSet = new HashSet<>();
-}
- */
