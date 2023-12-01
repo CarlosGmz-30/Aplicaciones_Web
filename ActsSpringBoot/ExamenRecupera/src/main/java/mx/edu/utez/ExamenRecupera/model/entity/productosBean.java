@@ -3,6 +3,9 @@ package mx.edu.utez.ExamenRecupera.model.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.HashSet;
+import java.util.Set;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -10,7 +13,7 @@ import lombok.*;
 @Builder
 @Entity
 @Table(name = "productos")
-public class productos {
+public class productosBean {
     @Id
     @Column(name = "id_productos")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,4 +24,11 @@ public class productos {
 
     @Column(name = "precio")
     private Double precio;
+
+    @ManyToMany
+    @JoinTable(name = "productosPedidos",
+            joinColumns = @JoinColumn(name = "id_productos"),
+            inverseJoinColumns = @JoinColumn(name = "id_pedidos"))
+    Set<pedidosBean> pedidosBeanSet = new HashSet<>();
+
 }

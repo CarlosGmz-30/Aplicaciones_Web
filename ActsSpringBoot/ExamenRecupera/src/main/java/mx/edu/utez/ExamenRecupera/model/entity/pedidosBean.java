@@ -30,4 +30,7 @@ public class pedidosBean {
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "pedidosBean", cascade = CascadeType.ALL)
     private Set<detallesBean> detallesBeanSet = new HashSet<>();
 
+    @ManyToMany(mappedBy = "pedidosBeanSet")
+    Set<productosBean> productosBeanSet;
+
 }
