@@ -3,6 +3,9 @@ package mx.edu.utez.ExamenRecupera.model.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.HashSet;
+import java.util.Set;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -22,4 +25,9 @@ public class pedidosBean {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "usuariosBean")
     private usuariosBean usuariosBean;
+
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "pedidosBean", cascade = CascadeType.ALL)
+    private Set<detallesBean> detallesBeanSet = new HashSet<>();
+
 }

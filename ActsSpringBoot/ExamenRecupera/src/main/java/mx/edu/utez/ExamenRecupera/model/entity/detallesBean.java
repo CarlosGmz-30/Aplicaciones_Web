@@ -9,13 +9,17 @@ import lombok.*;
 @ToString
 @Builder
 @Entity
-@Table(name = "detallesPedido")
-public class detallesPedidoBean {
+@Table(name = "detalles")
+public class detallesBean {
     @Id
-    @Column(name = "id_detalles_pedido")
+    @Column(name = "id_detalles")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id_detalles_pedido;
 
     @Column(name = "cantidad")
     private String cantidad;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "pedidosBean")
+    private pedidosBean pedidosBean;
 }

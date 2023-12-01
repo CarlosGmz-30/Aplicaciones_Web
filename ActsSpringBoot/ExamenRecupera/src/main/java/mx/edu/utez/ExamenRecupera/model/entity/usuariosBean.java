@@ -29,7 +29,6 @@ public class usuariosBean {
     @JoinColumn(name = "id_direcciones")
     private direccionesBean direccionesBean;
 
-
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "usuariosBean", cascade = CascadeType.ALL)
     private Set<comentariosBean> comentariosBeanSet = new HashSet<>();
 
