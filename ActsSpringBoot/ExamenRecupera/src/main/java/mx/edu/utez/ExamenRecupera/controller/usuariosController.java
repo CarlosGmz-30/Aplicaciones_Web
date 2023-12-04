@@ -1,3 +1,4 @@
+
 package mx.edu.utez.ExamenRecupera.controller;
 
 import mx.edu.utez.ExamenRecupera.model.dto.DtoUsuarios;
@@ -9,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("api/v1/recupera")
+@RequestMapping("api/v1/usuarios")
 public class usuariosController {
     @Autowired
     private IUsuarios usuariosService;
@@ -30,13 +31,13 @@ public class usuariosController {
                 .email(usuariosUpdate.getEmail()).build();
     }
 
-    @DeleteMapping("{/id_usuarios}")
+    @DeleteMapping("/{id_usuarios}")
     public void delete(@PathVariable Integer id_usuarios) {
         usuariosBean usuarios = usuariosService.findById(id_usuarios);
         usuariosService.delete(usuarios);
     }
 
-    @GetMapping("{/id_usuarios}")
+    @GetMapping("/{id_usuarios}")
     public usuariosBean showById(@PathVariable Integer id_usuarios) {
         return usuariosService.findById(id_usuarios);
     }

@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("api/v1/recupera")
+@RequestMapping("api/v1/comentarios")
 public class comentariosController {
 
     @Autowired
@@ -35,7 +35,7 @@ public class comentariosController {
         comentariosService.delete(comentarios);
     }
 
-    @GetMapping("{id_comentario}")
+    @GetMapping("/{id_comentario}")
     public comentariosBean shobById(@PathVariable Integer id_comentario) {
         return comentariosService.findById(id_comentario);
     }

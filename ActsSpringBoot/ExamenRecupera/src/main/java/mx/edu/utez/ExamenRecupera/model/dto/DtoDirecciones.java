@@ -9,6 +9,8 @@ import lombok.ToString;
 @AllArgsConstructor
 @ToString
 @Builder
-public class claseDto {
-    private Integer id;
+public class DtoDirecciones {
+    private Integer id_direcciones;
+    private String direccion;
+    private Integer id_usuario;
 }
