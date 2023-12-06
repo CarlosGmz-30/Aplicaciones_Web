@@ -25,13 +25,9 @@ import java.util.Set;
 @AllArgsConstructor
 public class ImplClient implements IClient {
 
-
     private final ClientDao clientDao;
-
     private final BranchDao branchDao;
-
     private final PersonDao personDao;
-
     private final CardDao cardDao;
 
     @Override

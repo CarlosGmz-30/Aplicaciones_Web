@@ -5,8 +5,10 @@ import lombok.*;
 @Setter
 @Getter
 @Builder
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 public class AuthResponse {
     String token;
+
+
 }

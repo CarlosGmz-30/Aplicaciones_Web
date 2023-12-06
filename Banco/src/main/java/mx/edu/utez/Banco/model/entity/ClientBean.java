@@ -27,6 +27,7 @@ public class ClientBean {
 
     @OneToOne(cascade = CascadeType.ALL, optional = false)
     @JoinColumn(name = "person_id")
+    @JsonIgnoreProperties({"clientBean"})
     private PersonBean personBean;
 
     @ManyToOne(fetch = FetchType.EAGER)

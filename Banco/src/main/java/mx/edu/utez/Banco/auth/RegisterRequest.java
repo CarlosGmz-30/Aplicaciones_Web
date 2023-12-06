@@ -1,17 +1,19 @@
 package mx.edu.utez.Banco.auth;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
 import lombok.*;
 
-@Getter
 @Setter
-@Builder
-@NoArgsConstructor
+@Getter
 @AllArgsConstructor
+@NoArgsConstructor
+@Builder
 public class RegisterRequest {
-    String username;
-    String password;
-    String name;
-    String firstName;
-    String lastName;
-    String country;
+    private String username;
+    private String name;
+    private String password;
+    private String firstname;
+    private String lastname;
+    private String country;
 }

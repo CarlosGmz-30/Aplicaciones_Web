@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("api/v1/public")
 @RequiredArgsConstructor
 public class PublicController {
-    @PostMapping(value = "/demo")
+    @PostMapping(value = "demo")
     public String welcome(){
-        return "welcome from secure endpoint";
+        return "Welcome from security endpoint";
     }
 }

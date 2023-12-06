@@ -2,12 +2,12 @@ package mx.edu.utez.Banco.auth;
 
 import lombok.*;
 
-@Getter
 @Setter
-@Builder
-@NoArgsConstructor
+@Getter
 @AllArgsConstructor
+@NoArgsConstructor
+@Builder
 public class LoginRequest {
-    String username;
-    String password;
+    private String username;
+    private String password;
 }

@@ -1,4 +1,4 @@
-package mx.edu.utez.Banco.model.entity.user;
+package mx.edu.utez.Banco.model.entity.User;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -21,20 +21,28 @@ public class UserBean implements UserDetails {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_user")
     private Integer id;
-    @Column(name = "username")
+
+    @Column(name = "username", nullable = false)
     private String username;
-    @Column(name = "password")
-    private String password;
-    @Column(name = "name")
+
+    @Column(name = "name", nullable = false)
     private String name;
-    @Column(name = "firstname")
+
+    @Column(name = "password", nullable = false)
+    private String password;
+
+    @Column(name = "firstname", nullable = false)
     private String firstname;
-    @Column(name = "lastname")
+
+    @Column(name = "lastname", nullable = false)
     private String lastname;
-    @Column(name = "country")
+
+    @Column(name = "country", nullable = false)
     private String country;
+
     @Enumerated(EnumType.STRING)
     private Role role;
+
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
