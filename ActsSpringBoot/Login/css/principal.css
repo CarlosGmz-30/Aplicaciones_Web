@@ -90,3 +90,64 @@ body {
     text-align: center;
     color: white;
 }
+
+#branch_container_forms {
+    width: 100%;
+}
+
+#forms_branch {
+    margin-left: 2%;
+    margin-right: 2%;
+    flex-direction: column;    
+    background-color: black;
+    border-radius: 15px;
+    height: 30vh;
+    text-align: center;
+}
+
+#forms_branch_container{
+    width: 100%;
+    display: flex;
+}
+
+#column1,
+#column2,
+#column3 {
+    width: 33.33%;
+    text-align: center;
+    flex-direction: column;
+    color: white;
+}
+
+#name,
+#address,
+#code {
+    width: 45vh;
+    height: 6vh;
+    border-radius: 5px;
+    padding-left: 5px;
+    border: 0.5px solid #777777;
+    background-color: #212121;
+    color: white;
+}
+
+#btn_send {
+    margin-top: 2%;
+    height: 40px;
+    width: 45vh;
+    border-radius: 20px;
+    border: none;
+    background-color: #951db9;
+    color: black;
+    font-weight: bold;
+    font-size: 15px;
+    transition: all 0.5s;
+}
+
+#btn_send:hover {
+    scale: 1.02;
+    cursor: pointer;
+    color: white;
+    background: #760f96b0;
+}
+
