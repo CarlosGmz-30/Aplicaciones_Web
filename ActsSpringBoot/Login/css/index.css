@@ -99,7 +99,7 @@ body {
     color: white;
     background-color: black;
     width: 60vh;
-    height: 65vh;
+    height: 70vh;
     border-radius: 15px;
 }
 
@@ -153,5 +153,19 @@ body {
     scale: 1.02;
     cursor: pointer;
     color: white;
-    background: #760f96;
+    background: #760f96b0;
+}
+
+#withoutAccount {
+    margin-top: 7px;
+}
+
+#withoutAccount a {
+    font-size: 13px;
+    color: #777777;
+    transition: all 0.3s;
+}
+
+#withoutAccount a:hover {
+    color: #951db9;
 }

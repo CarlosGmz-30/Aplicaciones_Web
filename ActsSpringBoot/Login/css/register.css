@@ -101,7 +101,7 @@ body {
     color: white;
     background-color: black;
     width: 110vh;
-    height: 73vh;
+    height: 76vh;
     border-radius: 15px;
 }
 
@@ -161,4 +161,18 @@ body {
     cursor: pointer;
     color: white;
     background: #760f96b0;
+}
+
+#withAccount {
+    margin-top: 7px;
+}
+
+#withAccount a {
+    font-size: 13px;
+    color: #777777;
+    transition: all 0.3s;
+}
+
+#withAccount a:hover {
+    color: #951db9;
 }
