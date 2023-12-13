@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" media="all" href="/css/fondo.css" />
+    <link rel="stylesheet" media="all" href="/css/index.css" />
+    <title>Branch CRUD</title>
+</head>
+
+<body>
+    <div class='ripple-background'>
+        <div class='circle xxlarge shade1'></div>
+        <div class='circle xlarge shade2'></div>
+        <div class='circle large shade3'></div>
+        <div class='circle mediun shade4'></div>
+        <div class='circle small shade5'></div>
+    </div>
+
+    <div id="branch_container">
+        <div id="column1">
+            <div id="forms_container">
+                <form id="forms">
+                    <div id="tittle">
+                        <h1 style="text-align: center">Registrar Dirección</h1>
+                    </div>
+                    <div>
+                        <div id="name_tittle">
+                            <h4>Nombre</h4>
+                        </div>
+                        <input type="text" id="name" name="name" placeholder="Nombre" required />
+                    </div>
+                    <div>
+                        <div id="address_tittle">
+                            <h4>Dirección</h4>
+                        </div>
+                        <input type="text" id="address" name="address" placeholder="Dirección" required />
+                    </div>
+                    <div>
+                        <div id="code_tittle">
+                            <h4>Código Postal</h4>
+                        </div>
+                        <input type="text" id="code" name="code" placeholder="Código" required />
+                    </div>
+                    <div>
+                        <input type="submit" id="btn_register" value="Registrar" />
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div id="column2">
+            <div id="results_container">
+                <div id="forms_container_2">
+                    <form id="forms2">
+                        <div id="tittle">
+                            <h1 style="text-align: center">Actualizar</h1>
+                        </div>
+                        <div>
+                            <div id="id_tittle">
+                                <h4>ID</h4>
+                            </div>
+                            <input type="number" id="id" name="id" placeholder="ID" required />
+                        </div>
+                        <div>
+                            <div id="name_tittle">
+                                <h4>Nombre</h4>
+                            </div>
+                            <input type="text" id="name" name="name" placeholder="Nombre" required />
+                        </div>
+                        <div>
+                            <div id="address_tittle">
+                                <h4>Dirección</h4>
+                            </div>
+                            <input type="text" id="address" name="address" placeholder="Dirección" required />
+                        </div>
+                        <div>
+                            <div id="code_tittle">
+                                <h4>Código Postal</h4>
+                            </div>
+                            <input type="text" id="code" name="code" placeholder="Código" required />
+                        </div>
+                        <div>
+                            <input type="submit" id="btn_register" value="Actualizar" />
+                        </div>
+                    </form>
+                    <form id="borrar">
+                        <h1>Borrar</h1>
+                        <input id="id_borrar" type="number" name="numer" required>
+                    <input type="submit">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="response" style="display: none;"></div>
+</body>
+<script src="js/index.js"></script>
+
+</html>
