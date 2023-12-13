@@ -140,3 +140,24 @@
 #id_delete_label {
     margin-bottom: 2%;
 }
+
+/******************** ESTILOS TABLA GET ******************************/
+
+#container_4 {
+    margin-top: 7%;
+    height: 50vh;
+}
+
+#table_container_4 {
+    background-color: rgba(0, 0, 0, 0.507);
+    border-radius: 15px;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    text-align: center;
+}
+
+#table_get {
+    width: 100%;
+    margin: 5%;
+}
