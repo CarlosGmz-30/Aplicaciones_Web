@@ -1,4 +1,3 @@
-/********************************** ESTILOS FONDO **************************************/
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap');
 
 body {
@@ -7,14 +6,36 @@ body {
     margin: 0;
 }
 
-
-.circle {
+.ripple-background {
     position: fixed;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    top: 0;
+    left: 0;
     z-index: -1;
+}
+
+.circle,
+.circle-right {
+    position: fixed;
     border-radius: 50%;
     background: #951db9;
     animation: ripple 15s infinite;
     box-shadow: 0px 0px 1px 0px #a31ed7;
+}
+
+.small,
+.medium,
+.large,
+.xlarge,
+.xxlarge,
+.small-right,
+.medium-right,
+.large-right,
+.xlarge-right,
+.xxlarge-right {
+    position: absolute;
 }
 
 .small {
@@ -49,6 +70,41 @@ body {
     width: 1000px;
     height: 1000px;
     left: -500px;
+    bottom: -500px;
+}
+
+.small-right {
+    width: 200px;
+    height: 200px;
+    right: -100px;
+    bottom: -100px;
+}
+
+.medium-right {
+    width: 400px;
+    height: 400px;
+    right: -200px;
+    bottom: -200px;
+}
+
+.large-right {
+    width: 600px;
+    height: 600px;
+    right: -300px;
+    bottom: -300px;
+}
+
+.xlarge-right {
+    width: 800px;
+    height: 800px;
+    right: -400px;
+    bottom: -400px;
+}
+
+.xxlarge-right {
+    width: 1000px;
+    height: 1000px;
+    right: -500px;
     bottom: -500px;
 }
 

@@ -66,10 +66,10 @@ document.getElementById('forms2').addEventListener('submit', function (event) {
         });
 });
 
-/*
-document.getElementById('borrar').addEventListener('submit', function (event) {
+
+document.getElementById('forms3').addEventListener('submit', function (event) {
     event.preventDefault();
-    let id = document.getElementById('id_borrar').value;
+    let id = document.getElementById('id_delete').value;
 
     let url = 'http://localhost:8080/api/v1/branch/'
     let url1 = url + id;
@@ -83,6 +83,8 @@ document.getElementById('borrar').addEventListener('submit', function (event) {
         .then(data => {
             document.getElementById('response').innerHTML = JSON.stringify(data);
             alert("Usuario borrado exitosamente");
+            document.getElementById('id_delete').value = "";
+
         })
 
-})*/
+})

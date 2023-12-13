@@ -27,7 +27,7 @@
     padding-left: 10px;
     border: 0.5px solid #777777;
     background-color: #212121;
-    font-size: 18px;
+    font-size: 16px;
     margin-bottom: 7%;
 }
 
@@ -48,7 +48,8 @@
 }
 
 #forms1,
-#forms2 {
+#forms2,
+#forms3 {
     display: flex;
     width: 50vh;
     height: 100%;
@@ -58,7 +59,8 @@
 }
 
 #forms_container_1,
-#forms_container_2 {
+#forms_container_2,
+#forms_container_3 {
     background-color: rgba(0, 0, 0, 0.507);
     border-radius: 15px;
     width: 100%;
@@ -76,7 +78,7 @@
     padding-left: 10px;
     border: 0.5px solid #777777;
     background-color: #212121;
-    font-size: 18px;
+    font-size: 16px;
     margin-bottom: 7%;
 }
 
@@ -89,7 +91,8 @@
 }
 
 #btn_actualizar,
-#btn_registrar {
+#btn_registrar,
+#btn_borrar {
     height: 50px;
     width: 45vh;
     display: block;
@@ -106,9 +109,34 @@
 }
 
 #btn_actualizar:hover,
-#btn_registrar:hover {
+#btn_registrar:hover,
+#btn_borrar:hover {
     scale: 1.02;
     cursor: pointer;
     color: white;
     background: #760f96b0;
+}
+
+
+/******************** DELETE CONTEINER ******************************/
+
+#container_3 {
+    margin-top: 7%;
+    height: 40vh;
+}
+
+#id_delete {
+    width: 45vh;
+    height: 6vh;
+    border-radius: 5px;
+    color: white;
+    padding-left: 10px;
+    border: 0.5px solid #777777;
+    background-color: #212121;
+    font-size: 16px;
+    margin-bottom: 7%;
+}
+
+#id_delete_label {
+    margin-bottom: 2%;
 }
