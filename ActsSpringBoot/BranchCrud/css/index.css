@@ -1,79 +1,101 @@
+/******************** ESTILOS GENERALES ******************************/
+
 #branch_container {
     display: flex;
 }
 
-#column1 {
-    width: 50%;
-    justify-content: center;
-    margin-top: 3%;
-    margin-left: 3%;
-    margin-right: 1%;
-}
-
+#column1,
 #column2 {
     width: 50%;
     justify-content: center;
-    margin-top: 3%;
-    margin-right: 3%;
-    margin-left: 1%;
+    margin: 2%;
 }
 
-#forms_container {
-    width: 100%;
+/******************** ESTILOS COLUMNA 1 ******************************/
+
+#container_1 {
     height: 68vh;
 }
 
-#forms_container_2{
-    width: 100%;
-    height: 85vh;
-}
-
-#forms,
-#forms2 {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    background-color: black;
-    border-radius: 15px;
-    color: white;
-}
-
-
-
-#btn_register {
-    margin-top: 2%;
-}
-
-#name,
-#address,
-#code,
-#id {
+#name_post,
+#address_post,
+#code_post {
     width: 45vh;
     height: 6vh;
     border-radius: 5px;
-    margin-bottom: 35px;
     color: white;
-    padding-left: 5px;
+    padding-left: 10px;
     border: 0.5px solid #777777;
     background-color: #212121;
     font-size: 18px;
-    margin-left: 5px;
+    margin-bottom: 7%;
 }
 
-#name_tittle,
-#address_tittle,
-#code_tittle,
-#id_tittle {
-    text-align: start;
-    margin-left: 17.5%;
+#id_post_label,
+#name_post_label,
+#address_post_label,
+#code_post_label {
+    margin-bottom: 2%;
+}
+
+
+
+
+/******************** ESTILOS COLUMNA 2 ******************************/
+
+#container_2 {
+    height: 82vh;
+}
+
+#forms1,
+#forms2 {
+    display: flex;
+    width: 50vh;
+    height: 100%;
+    flex-direction: column;
+    margin: 0 auto;
+    color: white;
+}
+
+#forms_container_1,
+#forms_container_2 {
+    background-color: rgba(0, 0, 0, 0.507);
+    border-radius: 15px;
+    width: 100%;
+    height: 100%;
+}
+
+#id_put,
+#name_put,
+#address_put,
+#code_put {
+    width: 45vh;
+    height: 6vh;
+    border-radius: 5px;
+    color: white;
+    padding-left: 10px;
+    border: 0.5px solid #777777;
+    background-color: #212121;
     font-size: 18px;
+    margin-bottom: 7%;
 }
 
-#btn_register {
+
+#id_put_label,
+#name_put_label,
+#address_put_label,
+#code_put_label {
+    margin-bottom: 2%;
+}
+
+#btn_actualizar,
+#btn_registrar {
     height: 50px;
     width: 45vh;
+    display: block;
+    margin: 0 auto;
+    margin-top: 4%;
+    margin-bottom: 3%;
     border-radius: 20px;
     border: none;
     background-color: #951db9;
@@ -83,7 +105,8 @@
     transition: all 0.5s;
 }
 
-#btn_register:hover {
+#btn_actualizar:hover,
+#btn_registrar:hover {
     scale: 1.02;
     cursor: pointer;
     color: white;

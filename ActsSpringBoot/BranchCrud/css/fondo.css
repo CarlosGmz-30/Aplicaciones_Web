@@ -4,11 +4,13 @@
 body {
     background: #212121;
     font-family: "Rubik";
+    margin: 0;
 }
 
 
 .circle {
     position: fixed;
+    z-index: -1;
     border-radius: 50%;
     background: #951db9;
     animation: ripple 15s infinite;
