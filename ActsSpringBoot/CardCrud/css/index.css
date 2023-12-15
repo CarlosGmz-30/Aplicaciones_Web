@@ -1,0 +1,165 @@
+/******************** ESTILOS GENERALES ******************************/
+
+#card_container {
+    display: flex;
+}
+
+#column1,
+#column2 {
+    width: 50%;
+    justify-content: center;
+    margin: 2%;
+}
+
+/******************** ESTILOS COLUMNA 1 ******************************/
+
+#container_1 {
+    height: 68vh;
+}
+
+#cardName_post,
+#creditLimit_post,
+#cardNumber_post {
+    width: 45vh;
+    height: 6vh;
+    border-radius: 5px;
+    color: white;
+    padding-left: 10px;
+    border: 0.5px solid #777777;
+    background-color: #212121;
+    font-size: 16px;
+    margin-bottom: 7%;
+}
+
+#id_post_label,
+#cardName_post_label,
+#creditLimit_post_label,
+#cardNumber_post_label {
+    margin-bottom: 2%;
+}
+
+
+
+
+/******************** ESTILOS COLUMNA 2 ******************************/
+
+#container_2 {
+    height: 82vh;
+}
+
+#forms1,
+#forms2,
+#forms3 {
+    display: flex;
+    width: 50vh;
+    height: 100%;
+    flex-direction: column;
+    margin: 0 auto;
+    color: white;
+}
+
+#forms_container_1,
+#forms_container_2,
+#forms_container_3 {
+    background-color: rgba(0, 0, 0, 0.507);
+    border-radius: 15px;
+    width: 100%;
+    height: 100%;
+}
+
+#id_put,
+#name_put,
+#address_put,
+#code_put {
+    width: 45vh;
+    height: 6vh;
+    border-radius: 5px;
+    color: white;
+    padding-left: 10px;
+    border: 0.5px solid #777777;
+    background-color: #212121;
+    font-size: 16px;
+    margin-bottom: 7%;
+}
+
+
+#id_put_label,
+#name_put_label,
+#address_put_label,
+#code_put_label {
+    margin-bottom: 2%;
+}
+
+#btn_actualizar,
+#btn_registrar,
+#btn_borrar {
+    height: 50px;
+    width: 45vh;
+    display: block;
+    margin: 0 auto;
+    margin-top: 4%;
+    margin-bottom: 3%;
+    border-radius: 20px;
+    border: none;
+    background-color: #b91d1d;
+    color: black;
+    font-weight: bold;
+    font-size: 15px;
+    transition: all 0.5s;
+}
+
+#btn_actualizar:hover,
+#btn_registrar:hover,
+#btn_borrar:hover {
+    scale: 1.02;
+    cursor: pointer;
+    color: white;
+    background: #8d1010;
+}
+
+
+/******************** DELETE CONTEINER ******************************/
+
+#container_3 {
+    margin-top: 7%;
+    height: 40vh;
+}
+
+#id_delete {
+    width: 45vh;
+    height: 6vh;
+    border-radius: 5px;
+    color: white;
+    padding-left: 10px;
+    border: 0.5px solid #777777;
+    background-color: #212121;
+    font-size: 16px;
+    margin-bottom: 7%;
+}
+
+#id_delete_label {
+    margin-bottom: 2%;
+}
+
+/******************** ESTILOS TABLA GET ******************************/
+
+#container_4 {
+    margin-top: 7%;
+    height: 50vh;
+}
+
+#table_container_4 {
+    background-color: rgba(0, 0, 0, 0.507);
+    border-radius: 15px;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    text-align: center;
+}
+
+#table_get {
+    color: white;
+    width: 100%;
+    padding: 0px 30px 0px 30px;
+    border: 0.5px solid #777777;
+}

@@ -1,11 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" media="all" href="/css/fondo.css" />
+    <link rel="stylesheet" media="all" href="/css/index.css">
+    <title>Card CRUD</title>
 </head>
+
 <body>
-    
+    <div class='ripple-background'>
+        <div class='circle xxlarge shade1'></div>
+        <div class='circle xlarge shade2'></div>
+        <div class='circle large shade3'></div>
+        <div class='circle mediun shade4'></div>
+        <div class='circle small shade5'></div>
+
+        <div class='circle-right xxlarge-right shade1'></div>
+        <div class='circle-right xlarge-right shade2'></div>
+        <div class='circle-right large-right shade3'></div>
+        <div class='circle-right medium-right shade4'></div>
+        <div class='circle-right small-right shade5'></div>
+    </div>
+    <div id="card_container">
+        <div id="column1">
+            <div id="container_1">
+                <div id="forms_container_1">
+                    <form id="forms1">
+                        <h1 style=" text-align: center;">Registrar</h1>
+
+                        <label id="cardName_post_label" for="name_put">Card Name:</label>
+                        <input type="text" id="cardName_post" name="name" placeholder="Card Name" required />
+
+                        <label id="creditLimit_post_label" for="address_put">Credit Limit:</label>
+                        <input type="number" id="creditLimit_post" name="address" placeholder="Credit Limit" required />
+
+                        <label id="cardNumber_post_label" for="code_put">Card Number:</label>
+                        <input type="text" id="cardNumber_post" name="code" placeholder="Card Number" required />
+
+                        <input type="submit" id="btn_registrar" value="Registrar">
+                    </form>
+                </div>
+            </div>
+            <div>
+                <div id="container_3">
+                    <div id="forms_container_3">
+                        <form id="forms3">
+                            <h1 style=" text-align: center;">Borrar</h1>
+
+                            <label id="id_delete_label" for="id_delete">ID:</label>
+                            <input type="number" id="id_delete" name="ID" placeholder="ID:" required />
+
+                            <input type="submit" id="btn_borrar" value="Borrar">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="column2">
+            <div id="container_2">
+                <div id="forms_container_2">
+                    <form id="forms2">
+                        <h1 style=" text-align: center;">Actualizar</h1>
+
+                        <label id="id_put_label" for="id_put">ID:</label>
+                        <input type="number" id="id_put" name="id" placeholder="ID" required />
+
+                        <label id="name_put_label" for="name_put">Card Name:</label>
+                        <input type="text" id="name_put" name="name" placeholder="Card Name" required />
+
+                        <label id="address_put_label" for="address_put">Credit Limit:</label>
+                        <input type="text" id="address_put" name="" placeholder="Credit Limit" required />
+
+                        <label id="code_put_label" for="code_put">Card Number:</label>
+                        <input type="text" id="code_put" name="code" placeholder="Card Number" required />
+
+                        <input type="submit" id="btn_actualizar" value="Actualizar">
+                    </form>
+                </div>
+            </div>
+            <div id="container_4">
+                <div id="table_container_4">
+                    <h1 style="color: white; padding: 20px 0px 0px 0px;">Consulta General</h1>
+                    <div style="margin: 5%;">
+                        <table id="table_get">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Nombre de la Tarjeta</th>
+                                    <th>Límite de Crédito</th>
+                                    <th>Número de Tarjeta</th>
+                                </tr>
+                            </thead>
+                            <tbody id="card">
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="response" style="display: none;"></div>
 </body>
+<script src="js/index.js"></script>
+
 </html>
